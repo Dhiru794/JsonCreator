@@ -1,0 +1,5 @@
+package com.example.jsoncreator.controller;
+
+public class JsonCreateController {
+
+}

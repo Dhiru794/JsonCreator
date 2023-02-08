@@ -1,0 +1,23 @@
+package com.example.jsoncreator.creator;
+
+import java.lang.reflect.Type;
+import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+@Component
+public class JsonCreator {
+	
+	public String getJsonFromMapString(String mapAsString) {
+		Type type = new TypeToken<Map<String,Object>>(){}.getType();
+		Gson gson = new Gson();
+		
+		Map<String,Object> map = gson.fromJson(mapAsString, type);
+		String json = gson.toJson(map);
+		
+		return json;
+	}
+
+}
